@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <defs>
+    <linearGradient id="grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B5BFD" />
+      <stop offset="100%" stop-color="#6C3BFD" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="4" flood-color="#3b5bfd" flood-opacity="0.12"/>
+    </filter>
+  </defs>
+
+  <!-- Clipboard Base -->
+  <rect x="50" y="45" width="100" height="120" rx="14" fill="var(--color-surface, #FFFFFF)" stroke="var(--color-border, #E4E7EE)" stroke-width="3" />
+
+  <!-- Binder Clip -->
+  <rect x="80" y="30" width="40" height="20" rx="6" fill="url(#grad-primary)" filter="url(#shadow)" />
+  <rect x="93" y="37" width="14" height="6" rx="3" fill="#FFFFFF" opacity="0.8" />
+
+  <!-- Sheet Lines -->
+  <!-- Line 1 -->
+  <rect x="72" y="75" width="56" height="6" rx="3" fill="var(--color-border, #E4E7EE)" />
+  <circle cx="62" cy="78" r="4" fill="url(#grad-primary)" opacity="0.3" />
+
+  <!-- Line 2 -->
+  <rect x="72" y="98" width="46" height="6" rx="3" fill="var(--color-border, #E4E7EE)" />
+  <circle cx="62" cy="101" r="4" fill="url(#grad-primary)" opacity="0.3" />
+
+  <!-- Line 3 (Checked) -->
+  <rect x="72" y="121" width="38" height="6" rx="3" fill="var(--color-border, #E4E7EE)" opacity="0.6" />
+  <circle cx="62" cy="124" r="4" fill="#2DBE76" />
+  <path d="M60.5 124l1 1 2-2" stroke="#FFFFFF" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Sparkle floating decoration -->
+  <path d="M152 75l3 3-3 3-3-3z" fill="#FF8A3B" />
+  <path d="M38 110l2.5 2.5-2.5 2.5-2.5-2.5z" fill="#FF8A3B" />
+  <circle cx="150" cy="120" r="14" fill="url(#grad-primary)" filter="url(#shadow)" />
+  <path d="M145 120l3.5 3.5 6.5-6.5" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+</svg>

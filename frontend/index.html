@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TaskFlow Lite — Client-Side Task Manager</title>
+  <meta name="description" content="A premium, lightweight, fully responsive client-side task manager built in vanilla JavaScript, HTML, and CSS. Persists state locally via localStorage.">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/main.css?v=1.7">
+  <link rel="stylesheet" href="styles/utilities.css?v=1.7">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- Header Area -->
+    <header>
+      <div class="logo-group">
+        <h1>TaskFlow <span class="logo-badge">Lite</span></h1>
+        <div class="logo-subtext">Your client-side task management solution</div>
+      </div>
+      
+      <!-- Theme Switcher -->
+      <button id="theme-toggle" class="btn-theme-toggle" aria-label="Switch to dark mode">
+        <!-- Sun Icon (visible in dark mode) -->
+        <svg class="theme-icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="5"></circle>
+          <line x1="12" y1="1" x2="12" y2="3"></line>
+          <line x1="12" y1="21" x2="12" y2="23"></line>
+          <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+          <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+          <line x1="1" y1="12" x2="3" y2="12"></line>
+          <line x1="21" y1="12" x2="23" y2="12"></line>
+          <line x1="4.22" y1="19.22" x2="5.64" y2="17.78"></line>
+          <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <!-- Moon Icon (visible in light mode) -->
+        <svg class="theme-icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+      </button>
+    </header>
+
+    <main class="card">
+      <!-- Input Section -->
+      <section class="task-form-container">
+        <form id="task-form" novalidate>
+          <div class="form-row">
+            <div class="input-wrapper">
+              <input 
+                type="text" 
+                id="task-input" 
+                placeholder="What needs to be done?" 
+                maxlength="120"
+                aria-label="New task description"
+                aria-describedby="form-error"
+                autocomplete="off"
+              >
+            </div>
+            <button type="submit" class="btn-submit">
+              Add Task
+            </button>
+          </div>
+          <!-- Validation Error Slot -->
+          <div id="form-error" class="error-text" aria-live="polite"></div>
+        </form>
+      </section>
+
+      <!-- Filter Controls & Info -->
+      <section class="controls-panel mt-4 mb-4">
+        <span id="task-counter" class="counter-text">0 of 0 tasks remaining</span>
+        <div class="filter-group" role="tablist" aria-label="Task filters">
+          <button class="filter-btn" data-filter="all" role="tab" aria-selected="true" aria-pressed="true">All</button>
+          <button class="filter-btn" data-filter="active" role="tab" aria-selected="false" aria-pressed="false">Active</button>
+          <button class="filter-btn" data-filter="completed" role="tab" aria-selected="false" aria-pressed="false">Completed</button>
+        </div>
+      </section>
+
+      <!-- Tasks List & Empty State Container -->
+      <section class="tasks-list-container">
+        <!-- Live Task List -->
+        <ul id="task-list"></ul>
+
+        <!-- Empty State Container -->
+        <div id="empty-state" class="empty-state-wrapper" style="display: none;">
+          <img src="images/empty-tasks.svg" class="empty-state-illustration" alt="No tasks checklist">
+          <div class="empty-state-text">
+            <h2 class="empty-state-title">No tasks found</h2>
+            <p class="empty-state-description">Add your first task above to get started!</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer Removed -->
+  </div>
+
+  <!-- JavaScript Module Entry -->
+  <script type="module" src="app.js?v=1.7"></script>
+</body>
+</html>
