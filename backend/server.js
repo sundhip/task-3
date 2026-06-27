@@ -1,5 +1,3 @@
-import path from 'path';
-import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 import express from 'express';
 import cors from 'cors';
@@ -12,14 +10,9 @@ import { securityHeaders } from './src/middleware/security.js';
 // Load environment variables
 dotenv.config();
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Serve static frontend files
-app.use(express.static(path.join(__dirname, '../frontend')));
 
 
 // Middleware pipeline
@@ -42,12 +35,8 @@ app.use('/api/', rateLimit({
 app.use('/api/tasks', taskRouter);
 app.use('/api/v1/tasks', taskRouter);
 
-// Serve index.html for any other non-API routes (fallback)
-app.get(/^(?!\/api).*$/, (req, res) => {
-  res.sendFile(path.join(__dirname, '../frontend/index.html'));
-});
-
 // Centralized error handling middleware
+
 
 app.use((err, req, res, next) => {
   console.error(err.stack);
