@@ -12,7 +12,8 @@ const KEYS = {
 // Dynamically choose API URL based on host (local vs deployed backend)
 const API_URL = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost:5000/api/tasks'
-  : 'https://task-3-sundhip.onrender.com/api/tasks'; // Replace with your actual Render URL after deployment
+  : 'https://task-3-backend-l32x.onrender.com/api/tasks';
+
 
 /**
  * Saves tasks list by syncing changes with the backend API.
